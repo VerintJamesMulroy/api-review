@@ -1,0 +1,12 @@
+{
+  "name": "ApiReview",
+  "version": "1.0.0",
+  "description": "Node.js, express, apollo",
+  "author": "James Mulroy <james.mulroy@verint.com>",
+  "dependencies": {
+    "express": "^4.16.1",
+	"apollo-server-express": "latest",
+	"graphql":"latest",
+	"tailwindcss":"latest"
+  }
+}
