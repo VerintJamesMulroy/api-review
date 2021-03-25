@@ -1,12 +1,19 @@
 {
-  "name": "ApiReview",
+  "name": "api-review",
   "version": "1.0.0",
   "description": "Node.js, express, apollo",
   "author": "James Mulroy <james.mulroy@verint.com>",
+  "scripts": {
+    "start": "nodemon NODE_ENV=development app/server.js"
+  },
   "dependencies": {
     "express": "^4.16.1",
-	"apollo-server-express": "latest",
-	"graphql":"latest",
-	"tailwindcss":"latest"
-  }
+    "apollo-server-express": "latest",
+    "apollo-datasource-rest": "latest",
+    "graphql": "latest",
+    "tailwindcss": "latest",
+    "autoprefixer": "latest",
+    "request": "latest"
+  },
+  "devDependencies": {}
 }
