@@ -13,7 +13,11 @@
     "graphql": "latest",
     "tailwindcss": "latest",
     "autoprefixer": "latest",
-    "request": "latest"
+    "request": "latest",
+    "semantic-ui-react": "latest",
+    "semantic-ui-css": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {}
 }

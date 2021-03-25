@@ -4,11 +4,24 @@ var app = express();
 const config = require('./config/config');
 const path = require('path');
 const { ApolloServer } = require('apollo-server-express');
-const { typeDefs, resolvers} = require('./models/TestAndCodeSchema');
-const TestAndCodeApi = require('./models/TestAndCodeApi');
+const { typeDefs, resolvers } = require('./models/TestAndCodeSchema');
+const TestAndCodeAPI = require('./models/TestAndCodeDataSource');
 
-//For graphql calls we want to use apollo, create and new instance.
-    const server = new ApolloServer({ typeDefs, resolvers, dataSources: ()=> ({TestApi: new TestAndCodeApi()})  });
+//For graphql calls we want to use apollo, create new instance, we also use datasources for our API call.
+const server = new ApolloServer({ 
+    typeDefs, 
+    resolvers, 
+    dataSources: ()=> {
+        return {
+            TestAndCodeAPI: new TestAndCodeAPI(),
+        }
+    },
+    context: () => {
+        return {
+            token: "Mulroy",
+        };
+    },
+});
 
 //Use apollos apply middleware to become part of express.
 server.applyMiddleware({app, path:"/api"});
@@ -23,5 +36,5 @@ app.use( function (req,res,next){
 });
 //We're all built, on with the show.
 app.listen(3025, function () {
-    console.log('Api Review Server Running on Port 3024 \n ${server.graphqlPath}');
+    console.log('Api Review Server Running on Port 3025}');
 });
