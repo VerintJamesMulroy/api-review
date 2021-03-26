@@ -3,10 +3,8 @@ var express = require('express');
 var router = express.Router();
 var app = express();
 const index = require( '../views/index' )
-// Home page route.
-router.get('/', function( req, res ){
-  res.send
-});
+
+
 router.get('/status', function (req, res) {
   //Lets do some API status infomation here
 });

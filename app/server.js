@@ -25,11 +25,6 @@ const server = new ApolloServer({
 
 //Use apollos apply middleware to become part of express.
 server.applyMiddleware({app, path:"/api"});
-
-//Routes for normal web traffic and content
-var web = require('./routes/web');
-app.use('/',web);
-
 // For any other route that has no content, return 404
 app.use( function (req,res,next){
     res.send('This is a 404');

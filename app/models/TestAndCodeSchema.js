@@ -7,12 +7,17 @@ type post {
   title: String!
   body: String!
 }
+
 type posts {
+  """
+  List of posts
+  """
     posts: [post]!
 }
 type Query{
   notPosts: String
   posts: [post]!
+  post(id: Int):post
 }
 `;
 
@@ -21,8 +26,19 @@ const resolvers = {
     notPosts(){
       return "Hello";
     },
+    //if we're asked for post data, do an API call and return our structured data here.
     posts: async (_source, {}, { dataSources }) =>{
-      return dataSources.TestAndCodeAPI.getPosts();
+      
+      var data = dataSources.TestAndCodeAPI.getPosts();
+      
+      return data;
+    },
+    post: async(_source, {id}, {dataSources})=>{
+
+      var data = dataSources.TestAndCodeAPI.getPost(id);
+      
+      return data;
+
     }
   }
 };
