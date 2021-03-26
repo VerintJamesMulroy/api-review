@@ -23,7 +23,9 @@ or
 # For the client App
 The client side is based upon a create-react-app [https://create-react-app.dev/] cookie cutter with Semantic UI React and Apollo Client. We are also using tailwindCSS.
 
-We have a very basic table located at, [http://localhost:3000], I was in the process of adding sorting to the table but there was a unforeseen issue with getting the REST API JSON to sort correctly so it's been commented out, will no doubt look at this at a later point. 
+We have a very basic table located at, [http://localhost:3000], I was in the process of adding sorting to the table but there was a unforeseen issue with getting the REST API JSON to sort correctly so it's been commented out, will no doubt look at this at a later point.
+
+An improvement I would also look to is to add pagination at the apollo server resolver to add functionality to the REST API.
 
 To build
 From the api-review\client directory
